@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramin Syed | Mechanical Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #111111;
+        --panel: #171717;
+        --text: #f5f1e8;
+        --muted: #b8b0a5;
+        --amber: #d89a3d;
+        --sakura: #f0b7bf;
+        --line: rgba(216, 154, 61, 0.2);
+        --max: 1100px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        color: var(--text);
+        background-color: var(--bg);
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 32px 32px;
+        line-height: 1.65;
+      }
+
+      main {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 6.5vh 6vw 10vh;
+      }
+
+      section {
+        margin-top: 7rem;
+      }
+
+      .hero {
+        min-height: 78vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .name {
+        margin: 0;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(3rem, 9vw, 7rem);
+        line-height: 0.95;
+        letter-spacing: 0.01em;
+      }
+
+      .title {
+        margin: 0.7rem 0 0;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+        color: var(--amber);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .lead {
+        margin-top: 1.6rem;
+        max-width: 60ch;
+        font-size: clamp(1rem, 1.8vw, 1.22rem);
+        color: var(--muted);
+      }
+
+      h2 {
+        margin: 0 0 1.5rem;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(1.7rem, 4vw, 3rem);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0;
+        max-width: 72ch;
+        font-size: 1rem;
+      }
+
+      .divider {
+        position: relative;
+        margin-top: 4.5rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .divider::after {
+        content: "桜";
+        position: absolute;
+        right: 0;
+        top: -0.95rem;
+        font-size: 0.95rem;
+        color: var(--sakura);
+        letter-spacing: 0.1em;
+      }
+
+      .cards {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 1.25rem;
+        transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: var(--amber);
+        box-shadow: 0 0 0 1px rgba(216, 154, 61, 0.28);
+      }
+
+      .card h3 {
+        margin: 0;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.25rem;
+      }
+
+      .card .meta {
+        margin-top: 0.4rem;
+        color: var(--amber);
+        font-size: 0.9rem;
+        letter-spacing: 0.03em;
+      }
+
+      .card p {
+        margin-top: 0.8rem;
+        color: var(--muted);
+      }
+
+      .projects {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .project {
+        background: var(--panel);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 1.2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 2px;
+        background: var(--amber);
+        transition: width 200ms ease;
+      }
+
+      .project:hover::before {
+        width: 100%;
+      }
+
+      .project h3 {
+        margin: 0;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.1rem;
+      }
+
+      .stat {
+        margin-top: 0.75rem;
+        display: inline-block;
+        padding: 0.18rem 0.55rem;
+        border: 1px solid rgba(240, 183, 191, 0.45);
+        color: var(--sakura);
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .skill-group {
+        background: rgba(255, 255, 255, 0.015);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 1rem;
+      }
+
+      .skill-group h3 {
+        margin: 0 0 0.7rem;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.96rem;
+        text-transform: uppercase;
+        color: var(--amber);
+        letter-spacing: 0.09em;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      .tag {
+        font-size: 0.84rem;
+        color: var(--text);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0.2rem 0.5rem;
+      }
+
+      .contact a {
+        color: var(--amber);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 180ms ease;
+      }
+
+      .contact a:hover {
+        border-bottom-color: var(--amber);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 620ms ease, transform 620ms ease;
+        transition-delay: var(--d, 0ms);
+      }
+
+      .reveal.on {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      footer {
+        margin-top: 6.5rem;
+        color: var(--muted);
+        font-size: 0.88rem;
+        border-top: 1px solid var(--line);
+        padding-top: 1.4rem;
+      }
+
+      @media (max-width: 920px) {
+        section {
+          margin-top: 5.2rem;
+        }
+
+        .cards,
+        .projects,
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero reveal" style="--d: 60ms">
+        <h1 class="name">Ramin Syed</h1>
+        <p class="title">Mechanical Engineer</p>
+        <p class="lead">
+          I build systems people call unrealistic, then make them run in the real world
+          — from turbocharging my own car as a teenager to engineering practical
+          solutions that balance performance, reliability, and craft.
+        </p>
+      </section>
+
+      <div class="divider reveal" style="--d: 120ms"></div>
+
+      <section class="about reveal" style="--d: 140ms">
+        <h2>About</h2>
+        <p>
+          I am a Mechanical Engineering student at McMaster University with a 3.8 GPA,
+          focused on turning rigorous analysis into tangible outcomes. I like precision,
+          but I also care about how things feel in the hand and in daily use, whether I
+          am tuning a drivetrain, refining a prototype, or shaping a workflow. Outside
+          technical work, I recharge through baking, car projects, and Japanese design
+          culture that values restraint, utility, and intentional detail.
+        </p>
+      </section>
+
+      <section class="experience reveal" style="--d: 180ms">
+        <h2>Experience</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Mechanical Design & Operations</h3>
+            <p class="meta">MiON Forest</p>
+            <p>
+              Supported product and process development by combining rapid iteration with
+              disciplined systems thinking to improve reliability and execution speed.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Product Engineering</h3>
+            <p class="meta">Amano Labs</p>
+            <p>
+              Collaborated across hardware and software teams to prototype assistive
+              technology systems with manufacturable mechanical architecture.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="reveal" style="--d: 220ms">
+        <h2>Projects</h2>
+        <div class="projects">
+          <article class="project">
+            <h3>Autonomous Design Challenge Platform</h3>
+            <span class="stat">7th / all teams</span>
+            <p>
+              Built a high-efficiency mechanism under strict constraints, optimizing for
+              accuracy, assembly speed, and repeatability.
+            </p>
+          </article>
+          <article class="project">
+            <h3>Teenage Turbo Build</h3>
+            <span class="stat">122% HP increase</span>
+            <p>
+              Designed and tuned a complete turbo setup, balancing thermal management,
+              fueling, and reliability on a real street platform.
+            </p>
+          </article>
+          <article class="project">
+            <h3>National Engineering Sprint</h3>
+            <span class="stat">Top 10 / 200+</span>
+            <p>
+              Led a compact team to deliver a full concept-to-test cycle under deadline
+              pressure with clear documentation and handoff.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="reveal" style="--d: 260ms">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <article class="skill-group">
+            <h3>Design</h3>
+            <div class="tags">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Fusion 360</span>
+              <span class="tag">GD&T</span>
+              <span class="tag">Rapid Prototyping</span>
+            </div>
+          </article>
+          <article class="skill-group">
+            <h3>Analysis</h3>
+            <div class="tags">
+              <span class="tag">FEA Basics</span>
+              <span class="tag">MATLAB</span>
+              <span class="tag">Python</span>
+              <span class="tag">Data Modeling</span>
+            </div>
+          </article>
+          <article class="skill-group">
+            <h3>Build & Team</h3>
+            <div class="tags">
+              <span class="tag">Manufacturing</span>
+              <span class="tag">Test Planning</span>
+              <span class="tag">Technical Writing</span>
+              <span class="tag">Cross-Functional Collaboration</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact reveal" style="--d: 300ms">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:raminsyed33@gmail.com">raminsyed33@gmail.com</a></p>
+      </section>
+
+      <footer class="reveal" style="--d: 340ms">
+        Quiet confidence, engineered warmth.
+      </footer>
+    </main>
+
+    <script>
+      const targets = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("on");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+      );
+      targets.forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>
